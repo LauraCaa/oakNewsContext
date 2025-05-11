@@ -1,0 +1,25 @@
+.toggle{
+    align-items: center;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    display: flex;
+    height: 25px;
+    justify-content: space-around;
+    left: 10px;
+    position: fixed;
+    top: 150px;
+    width: 50px;
+}
+.icon{
+    height: 15px;
+    width: 15px;
+}
+.button{
+    background-attachment: #999;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 25px;
+    position: absolute;
+    width: 25px;
+}
