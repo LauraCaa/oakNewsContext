@@ -5,6 +5,7 @@ import Spinner from "../../components/spinner/Spinner";
 import NewsCard from "../../components/newsCard/NewsCard";
 import { ThemeContext} from "../../context/ThemeContext";
 import axios from "axios";
+import ChangeTheme from "../../components/theme/ChangeTheme";
 
 
 const Home = () => {
@@ -12,8 +13,7 @@ const Home = () => {
     const[loading, setLoading] = useState(false);
 
     const theme = useContext(ThemeContext);
-    console.log(theme)
-
+    const darkMode = theme.state.darkMode;
 
     const apiKey = process.env.REACT_APP_API_KEY;
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
@@ -35,7 +35,8 @@ const Home = () => {
     const sliderNews = news?.splice(0, 3);
 
     return(
-        <div className={styles.container}>
+        <div className={styles.container} style={{backgroundColor: darkMode ? "orange" : "white"}}>
+            <ChangeTheme></ChangeTheme>
             <div className={styles.slider}>
                 <Slider sliderNews={sliderNews}/>
             </div>
